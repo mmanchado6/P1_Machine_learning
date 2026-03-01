@@ -1,0 +1,17 @@
+# Entornos Virtuales
+.venv/
+venv/
+env/
+ENV/
+bin/
+lib/
+lib64/
+
+
+# Cache de Python
+__pycache__/
+
+
+# Variables de entorno
+.env
+.venv

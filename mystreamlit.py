@@ -14,8 +14,16 @@ MONTH_TRANSLATION = {
 }
 
 MONTH_ORDER = list(MONTH_TRANSLATION.keys())
+# Definimos nuevamente la función antes de cargar el modelo
+def pdays_feature_engineering(X):
+    X = X.copy()
+    # Crear variable binaria: si fue contactado anteriormente
+    X['pdays_contacted'] = (X['pdays'] != -1).astype(int)
+    # Reemplazar -1 por 0
+    X['pdays'] = X['pdays'].replace(-1, 0)
+    return X
 
-st.set_page_config(page_title="Despliegue del Modelo", page_icon="🚀", layout="centered")
+st.set_page_config(page_title="Despliegue del Modelo", page_icon="📊", layout="centered")
 st.title("Predicción con Nuevos Datos")
 st.write("Aplicación para predecir si un cliente suscribirá un depósito a plazo.")
 

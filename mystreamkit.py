@@ -17,7 +17,7 @@ MONTH_ORDER = list(MONTH_TRANSLATION.keys())
 
 st.set_page_config(page_title="Despliegue del Modelo", page_icon="🚀", layout="centered")
 st.title("Predicción con Nuevos Datos")
-st.write("Esta aplicación utiliza un `Pipeline` completo de `scikit-learn` cargado desde un archivo `joblib`.")
+st.write("Aplicación para predecir si un cliente suscribirá un depósito a plazo.")
 
 # Cargar el pipeline
 

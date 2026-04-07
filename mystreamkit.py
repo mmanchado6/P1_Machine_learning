@@ -106,10 +106,6 @@ if submitted:
     # Convertimos las entradas en un DataFrame de una única fila
     X_new = pd.DataFrame([inputs])
 
-    # Preprocesado de pdays manual, ya que no se ha incluido en el pipeline
-    X_new['pdays_contacted'] = (X_new['pdays'] != -1).astype(int) 
-    X_new['pdays'] = X_new['pdays'].replace(-1, 0)
-
     try:
         # Predecimos usando el Pipeline (que ya incorpora todo el preprocesamiento)
         proba = pipeline.predict_proba(X_new)[0]
